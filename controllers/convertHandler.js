@@ -47,14 +47,17 @@ function ConvertHandler() {
 
   this.spellOutUnit = function(unit) {
     var resultSpellout;
-    console.log("resultSpellout", unit);
+    if(unit == "kg"){
+      resultSpellout = "kilogram"
+    }
+    console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
   };
 
   this.convert = function(initNum, initUnit) {
     initNum = Number(initNum);  
- console.log('initNum,', initNum,)
+ //console.log('initNum,', initNum,)
     
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
