@@ -26,15 +26,16 @@ function ConvertHandler() {
   };
 
   this.getReturnUnit = function(initUnit) {
-    var result;
-
-    return result;
+    var resultInitUnit = initUnit ;
+//console.log("initUnit", resultInitUnit)
+    return resultInitUnit;
   };
 
   this.spellOutUnit = function(unit) {
-    var result;
+    var resultSpellout;
+    console.log("resultSpellout", unit)
 
-    return result;
+    return resultSpellout;
   };
 
   this.convert = function(initNum, initUnit) {
@@ -42,7 +43,7 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var result;
-
+console.log('initNum convert',initNum,"initUnit", initUnit)
     return result;
   };
 
