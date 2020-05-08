@@ -9,15 +9,21 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result=input;
-    console.log('result input', result, 'end')
-    return result;
+    var regex = /\d*/
+   
+    var resultNum=input.match(regex);
+    resultNum = resultNum[0];
+ //   console.log('result input', resultNum, 'end')
+    return resultNum;
   };
   
   this.getUnit = function(input) {
-    var result;
-    
-    return result;
+     var regex = /\d*/
+   
+    var resultNum=input.match(regex);
+    resultNum = resultNum[0];
+ //   console.log('result input', resultNum, 'end')
+    return resultNum;
   };
   
   this.getReturnUnit = function(initUnit) {
