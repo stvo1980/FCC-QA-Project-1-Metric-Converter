@@ -8,11 +8,11 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-    var regex = /\d*/;
+    var regex = /\d*[.|/]\d*/gi;
 
     var resultNum = input.match(regex);
     resultNum = resultNum[0];
-    //   console.log('result input', resultNum, 'end')
+       console.log('result input', resultNum, 'end')
     return resultNum;
   };
 
@@ -52,7 +52,7 @@ function ConvertHandler() {
   };
 
   this.convert = function(initNum, initUnit) {
-    initNum = initNum;  
+    initNum = Number(initNum);  
  console.log('initNum,', initNum,)
     
     const galToL = 3.78541;
