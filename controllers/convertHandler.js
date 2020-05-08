@@ -8,11 +8,12 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-    var regex = /\d*[.|/]\d*/gi;
+    var regex = /\d*[.|"/"]\d*/gi;
 
     var resultNum = input.match(regex);
-    resultNum = resultNum[0];
-       console.log('result input', resultNum, 'end')
+    resultNum = eval(resultNum[0]);
+    
+   //    console.log('result input', resultNum, 'end')
     return resultNum;
   };
 
@@ -74,21 +75,24 @@ function ConvertHandler() {
       resultConvert = initNum * lbsToKg;
     }
 
-    console.log(
-      "initNum convert",
-      initNum,
-      "initUnit",
-      initUnit,
-      "converted",
-      resultConvert
-    );
+  //  console.log(
+  //    "initNum convert",
+   //   initNum,
+   //   "initUnit",
+   //   initUnit,
+   //   "converted",
+  //    resultConvert
+  //  );
     return resultConvert;
   };
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
+    var resultString;
+resultString = initNum +" "+ initUnit + " converts to "+ returnNum +" "+ returnUnit
+    
 
-    return result;
+ //   console.log('resultString', resultString);
+    return resultString;;
   };
 }
 
