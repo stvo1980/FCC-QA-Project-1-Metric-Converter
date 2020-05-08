@@ -26,9 +26,23 @@ function ConvertHandler() {
   };
 
   this.getReturnUnit = function(initUnit) {
-    var resultInitUnit = initUnit ;
-//console.log("initUnit", resultInitUnit)
-    return resultInitUnit;
+    var resultReturnUnit ;
+    if(initUnit == 'mi'){
+      resultReturnUnit = 'km'}
+    else if(initUnit == 'km') {
+      resultReturnUnit = 'mi'
+    } else if (initUnit == 'L') {
+      resultReturnUnit = 'gal'
+    } else if (initUnit == 'gal') {
+      resultReturnUnit = 'L'
+    } else if (initUnit == 'kg') {
+      resultReturnUnit = 'lbs'
+    } else if (initUnit == 'lbs') {
+      resultReturnUnit = 'kg'
+    }
+console.log("resultReturnUnit", resultReturnUnit)
+    return resultReturnUnit;
+    
   };
 
   this.spellOutUnit = function(unit) {
@@ -42,9 +56,25 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
-console.log('initNum convert',initNum,"initUnit", initUnit)
-    return result;
+    var resultConvert;
+    
+    if(initUnit == 'mi'){
+      resultConvert = initNum * miToKm}
+    else if(initUnit == 'km') {
+      resultConvert = initNum / miToKm
+    } else if (initUnit == 'L') {
+      resultConvert = initNum / galToL;
+    } else if (initUnit == 'gal') {
+      resultConvert = initNum * galToL;
+    } else if (initUnit == 'kg') {
+      resultConvert = initNum * lbsToKg
+    } else if (initUnit == 'lbs') {
+      resultConvert = initNum * lbsToKg
+    }
+    
+    
+console.log('initNum convert',initNum,"initUnit", initUnit, 'converted', resultConvert)
+    return resultConvert;
   };
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
