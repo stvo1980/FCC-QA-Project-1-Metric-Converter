@@ -9,8 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
-    
+    var result=input;
+    console.log('result input', result, 'end')
     return result;
   };
   
