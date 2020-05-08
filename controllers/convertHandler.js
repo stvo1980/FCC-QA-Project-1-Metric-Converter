@@ -1,58 +1,56 @@
 /*
-*
-*
-*       Complete the handler logic below
-*       
-*       
-*/
+ *
+ *
+ *       Complete the handler logic below
+ *
+ *
+ */
 
 function ConvertHandler() {
-  
   this.getNum = function(input) {
-    var regex = /\d*/
-   
-    var resultNum=input.match(regex);
+    var regex = /\d*/;
+
+    var resultNum = input.match(regex);
     resultNum = resultNum[0];
- //   console.log('result input', resultNum, 'end')
+    //   console.log('result input', resultNum, 'end')
     return resultNum;
   };
-  
+
   this.getUnit = function(input) {
-     var regex = /\d*/
-   
-    var resultNum=input.match(regex);
-    resultNum = resultNum[0];
- //   console.log('result input', resultNum, 'end')
-    return resultNum;
+    var regex = /[a-z]/gi;
+
+    var resultUnit = input.match(regex);
+    resultUnit = resultUnit.join("");
+   // console.log("result input", resultUnit, "end");
+    return resultUnit;
   };
-  
+
   this.getReturnUnit = function(initUnit) {
     var result;
-    
+
     return result;
   };
 
   this.spellOutUnit = function(unit) {
     var result;
-    
+
     return result;
   };
-  
+
   this.convert = function(initNum, initUnit) {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var result;
-    
+
     return result;
   };
-  
+
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
-    
+
     return result;
   };
-  
 }
 
 module.exports = ConvertHandler;
