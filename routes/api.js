@@ -24,7 +24,10 @@ module.exports = function (app) {
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
    console.log("initNum", initNum) 
-   
+   if(isNaN(initNum)) {
+     console.log("errorinvalid number" )
+   }
+     
    res.json({
         initNum:initNum, 
         initUnit: initUnit,

@@ -8,8 +8,8 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-    var regex = /^\d*(\.|\/)?\d*/gi;
-
+//    var regex = /^\d*(\.|\/)?\d*/gi;
+var regex = /^\d*[^a-z]*/
     var resultNum = input.match(regex);
     resultNum = eval(resultNum[0]);
  //   resultNum = Number(resultNum).toFixed(3);
