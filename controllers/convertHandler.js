@@ -39,17 +39,17 @@ var resultNum = input.match(regex);
 
   this.getReturnUnit = function(initUnit) {
     var resultReturnUnit;
-    if (initUnit == "mi") {
+    if (initUnit == "mi" || initUnit == "MI") {
       resultReturnUnit = "km";
-    } else if (initUnit == "km") {
+    } else if (initUnit == "km" || initUnit == "KM") {
       resultReturnUnit = "mi";
-    } else if (initUnit == "L") {
+    } else if (initUnit == "L" || initUnit == "l") {
       resultReturnUnit = "gal";
-    } else if (initUnit == "gal") {
+    } else if (initUnit == "gal" ||initUnit == "GAL") {
       resultReturnUnit = "L";
-    } else if (initUnit == "kg") {
+    } else if (initUnit == "kg" ||initUnit == "KG") {
       resultReturnUnit = "lbs";
-    } else if (initUnit == "lbs") {
+    } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultReturnUnit = "kg";
     }
     return resultReturnUnit;
@@ -57,17 +57,17 @@ var resultNum = input.match(regex);
 
   this.spellOutUnit = function(unit) {
     var resultSpellout;
-    if (unit == "kg") {
+    if (unit == "kg" ||unit == "KG") {
       resultSpellout = "kilograms";
-    } else if (unit == "km") {
+    } else if (unit == "km" || unit == "KM") {
       resultSpellout = "kilometers";
-    } else if (unit == "L") {
+    } else if (unit == "L" || unit == "l") {
       resultSpellout = "Litters";
-    } else if (unit == "lbs") {
+    } else if (unit == "lbs" || unit == "LBS") {
       resultSpellout = "pounds";
-    } else if (unit == "mi") {
+    } else if (unit == "mi" || unit == "MI") {
       resultSpellout = "miles";
-    } else if (unit == "gal") {
+    } else if (unit == "gal" || unit == "GAL") {
       resultSpellout = "gallons";
     }
     // console.log("resultSpellout", resultSpellout,unit);
@@ -78,25 +78,25 @@ var resultNum = input.match(regex);
   this.convert = function(initNum, initUnit) {
   //  initNum = Number(initNum);
     var calc = eval(initNum)
-    console.log('initNum', initNum)
-    console.log('calc', calc)
+//    console.log('initNum', initNum)
+ //   console.log('calc', calc)
 
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var resultConvert;
 
-    if (initUnit == "mi") {
+    if (initUnit == "mi" || initUnit == "MI" ) {
       resultConvert = calc * miToKm;
-    } else if (initUnit == "km") {
+    } else if (initUnit == "km" || initUnit == "KM") {
       resultConvert = calc / miToKm;
-    } else if (initUnit == "L") {
+    } else if (initUnit == "L" || initUnit == "l") {
       resultConvert = calc / galToL;
-    } else if (initUnit == "gal") {
+    } else if (initUnit == "gal" || initUnit == "GAL") {
       resultConvert = calc * galToL;
-    } else if (initUnit == "kg") {
+    } else if (initUnit == "kg" || initUnit == "KG") {
       resultConvert = calc * lbsToKg;
-    } else if (initUnit == "lbs") {
+    } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultConvert = calc * lbsToKg;
     }
     //    else

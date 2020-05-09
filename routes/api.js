@@ -28,7 +28,7 @@ module.exports = function(app) {
     var initUnit = convertHandler.getUnit(input);
     //  console.log("igetUnit", convertHandler.getUnit(input))
 
-    var regexUnit = /^(mi|gls|km|L|gal|kg)$/i;
+    var regexUnit = /^(mi|lbs|km|L|gal|kg)$/i;
     var testUnit = regexUnit.test(initUnit);
     //  console.log("test", test)
   

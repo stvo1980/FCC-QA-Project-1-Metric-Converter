@@ -60,7 +60,7 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
-        assert.include(convertHandler.getNum(input),'For Each Valid Unit Inputs');
+        assert.include(convertHandler.getUnit(input),'For Each Valid Unit Inputs');
    //   done();
         
         //assert
