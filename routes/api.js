@@ -34,15 +34,16 @@ module.exports = function(app) {
   
     ///
     if(!testNum && !test) {
-      res.json({ error: "invalid number and unit" });
+      
+      res.json({ string: "Invalid number and unit"});
     }
     
      else if (!testNum) {
-      res.json({ error: "invalid number" });
+      res.json({ string:"Invalid number" });
     }
     //
    else if (!test) {
-      res.json({ error: "invalid unit" });
+      res.json({ error: "Invalid unit" });
     }
     
     
