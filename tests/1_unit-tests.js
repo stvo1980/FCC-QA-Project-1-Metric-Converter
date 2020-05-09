@@ -43,13 +43,14 @@ suite('Unit Tests', function(){
     
     test('Invalid Input (double fraction)', function(done) {
        var input = '25//22';
-      assert.equal(convertHandler.getNum(input),'Invalid Input (double fraction)');
+      assert.isNaN(convertHandler.getNum(input),'Invalid Input (double fraction)');
       done();
     });
     
     test('No Numerical Input', function(done) {
-      
-      //done();
+       var input = "k4*j"
+      assert.isNaN(convertHandler.getNum(input),'No Numerical Input');
+      done();
     }); 
     
   });
@@ -59,6 +60,9 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {
+        assert.include(convertHandler.getNum(input),'For Each Valid Unit Inputs');
+   //   done();
+        
         //assert
       });
       done();
