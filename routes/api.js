@@ -15,15 +15,15 @@ module.exports = function(app) {
   var convertHandler = new ConvertHandler();
 
   app.route("/api/convert").get(function(req, res) {
+    
+    
     var input = req.query.input;
     var initNum = convertHandler.getNum(input);
   //  console.log("initNum", initNum);
-    var regexNum = /^[0-9]*(\/|\.)?[0-9]*$/;
+    var regexNum = /^\d*(\.)?\d*(\/|\.)?\d*(\.)?\d*$/;
     var testNum = regexNum.test(initNum);
     //console.log("testNum", testNum)
-    if (!testNum) {
-      res.json({ error: "invalid number" });
-    }
+   
 
     var initUnit = convertHandler.getUnit(input);
     //  console.log("igetUnit", convertHandler.getUnit(input))
@@ -31,9 +31,21 @@ module.exports = function(app) {
     var regexFilter = /^(mi|gls|km|L|gal|kg)$/i;
     var test = regexFilter.test(initUnit);
     //  console.log("test", test)
-    if (!test) {
+  
+    ///
+    if(!testNum && !test) {
+      res.json({ error: "invalid number and unit" });
+    }
+    
+     else if (!testNum) {
+      res.json({ error: "invalid number" });
+    }
+    //
+   else if (!test) {
       res.json({ error: "invalid unit" });
     }
+    
+    
 
     var returnNum = convertHandler.convert(initNum, initUnit);
     var returnUnit = convertHandler.getReturnUnit(initUnit);
