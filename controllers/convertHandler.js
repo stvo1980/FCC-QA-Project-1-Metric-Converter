@@ -52,11 +52,7 @@ function ConvertHandler() {
       resultReturnUnit = "lbs";
     } else if (initUnit == "lbs") {
       resultReturnUnit = "kg";
-    } else 
-      {
-        resultReturnUnit = "invalid unit"
-      }
-   // console.log("resultReturnUnit", resultReturnUnit);
+    } 
     return resultReturnUnit;
   };
 
@@ -109,7 +105,7 @@ function ConvertHandler() {
     }
     else 
       console.log("error")
-    resultConvert = undefined;
+//    resultConvert = undefined;
 
   //  console.log(
   //    "initNum convert",
