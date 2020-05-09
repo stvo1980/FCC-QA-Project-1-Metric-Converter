@@ -23,23 +23,28 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
+      var input = '32.55L';
+      assert.equal(convertHandler.getNum(input),32.55);
+      done();
       //done();
     });
     
     test('Fractional Input', function(done) {
-      
-      //done();
+       var input = '1/4L';
+      assert.equal(convertHandler.getNum(input),"1/4");
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      
-      //done();
+      var input = '1.5/40.5L';
+      assert.equal(convertHandler.getNum(input),"1.5/40.5");
+      done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+       var input = '25//22';
+      assert.equal(convertHandler.getNum(input),'Invalid Input (double fraction)');
+      done();
     });
     
     test('No Numerical Input', function(done) {
