@@ -22,10 +22,7 @@ function ConvertHandler() {
    
       console.log('result inputfinal', resultNum, 'end')
     return resultNum;
-   // var result;
-  //  result - input;
-  //  result = eval(input);
-  //  console.log('result input', result, 'end')
+   
     
   };
 
@@ -35,12 +32,7 @@ function ConvertHandler() {
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
      console.log("result inputUnit", resultUnit, "end");
- //   var regexFilter = /^(mi|gls|km|L|gal|kg)$/i
-//    var test = regexFilter.test(resultUnit);
-//    console.log("test", test)
-  //  if(test){
-  //  resultUnit;}
- //   else {resultUnit=false}
+ 
       return resultUnit;
   };
 
