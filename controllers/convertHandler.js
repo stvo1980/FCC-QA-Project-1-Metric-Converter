@@ -109,7 +109,7 @@ function ConvertHandler() {
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var resultString;
-resultString = initNum +" "+ initUnit + " converts to "+ returnNum +" "+ 
+resultString = initNum +" "+ this.spellOutUnit(initUnit) + " converts to "+ returnNum +" "+ 
   this.spellOutUnit(returnUnit)
     
 
