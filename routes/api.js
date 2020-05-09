@@ -25,7 +25,11 @@ module.exports = function (app) {
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
       res.send({
-        'hello':'hello'
+        initNum:initNum, 
+        initUnit: initUnit,
+        returnNum: returnNum,
+        returnUnit: returnUnit,
+        string: string
       })
     });
     

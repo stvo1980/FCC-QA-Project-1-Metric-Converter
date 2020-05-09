@@ -48,18 +48,20 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     var resultSpellout;
     if(unit == "kg"){
-      resultSpellout = "kilogram"
+      resultSpellout = "kilograms"
     }
     else if(unit=="km") {
       resultSpellout = "kilometers"
     }
     else if (unit == "L") {
-      resultSpellout = "litre"
+      resultSpellout = "Litters"
     }
     else if (unit == "gls") {
-      resultSpellout = "kilometers"
+      resultSpellout = "gallons"
     }
-    e
+    else if (unit == "mi") {
+      resultSpellout = "miles"
+    }
    // console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
@@ -101,10 +103,11 @@ function ConvertHandler() {
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var resultString;
-resultString = initNum +" "+ initUnit + " converts to "+ returnNum +" "+ returnUnit
+resultString = initNum +" "+ initUnit + " converts to "+ returnNum +" "+ 
+  this.spellOutUnit(returnUnit)
     
 
- //   console.log('resultString', resultString);
+    console.log('resultString', resultString);
     return resultString;;
   };
 }
