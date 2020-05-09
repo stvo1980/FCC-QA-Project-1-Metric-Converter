@@ -24,12 +24,7 @@ module.exports = function (app) {
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
-    if(initNum==undefined)
-      {res.json({error: "invalid number"})}
-    else if (initUnit == undefined) {
-      res.json({error: "invalid unit"})
-    } else if (initUnit == undefined && initNum)
-      res.json({
+   res.json({
         initNum:initNum, 
         initUnit: initUnit,
         returnNum: returnNum,

@@ -13,8 +13,13 @@ function ConvertHandler() {
     var resultNum = input.match(regex);
     resultNum = eval(resultNum[0]);
     
-   //    console.log('result input', resultNum, 'end')
+      console.log('result input', resultNum, 'end')
     return resultNum;
+   // var result;
+  //  result - input;
+  //  result = eval(input);
+  //  console.log('result input', result, 'end')
+    
   };
 
   this.getUnit = function(input) {
