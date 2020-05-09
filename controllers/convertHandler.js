@@ -35,6 +35,9 @@ function ConvertHandler() {
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
     // console.log("result input", resultUnit, "end");
+    var regexFilter = /mi|gls|km|L|gal|kg/gi
+    var test = regexFilter.test(resultUnit);
+    console.log()
     return resultUnit;
   };
 
