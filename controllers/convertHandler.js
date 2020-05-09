@@ -45,7 +45,10 @@ function ConvertHandler() {
       resultReturnUnit = "lbs";
     } else if (initUnit == "lbs") {
       resultReturnUnit = "kg";
-    }
+    } else 
+      {
+        resultReturnUnit = "invalid unit"
+      }
    // console.log("resultReturnUnit", resultReturnUnit);
     return resultReturnUnit;
   };
@@ -61,11 +64,14 @@ function ConvertHandler() {
     else if (unit == "L") {
       resultSpellout = "Litters"
     }
-    else if (unit == "gls") {
-      resultSpellout = "gallons"
+    else if (unit == "lbs") {
+      resultSpellout = "pounds"
     }
     else if (unit == "mi") {
       resultSpellout = "miles"
+    }
+    else if (unit == "gal") {
+      resultSpellout = "gallons"
     }
    // console.log("resultSpellout", resultSpellout,unit);
 
