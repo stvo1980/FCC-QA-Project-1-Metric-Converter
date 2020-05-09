@@ -8,22 +8,16 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-    var regex = /^\d*(\.|\/)?\d*/gi;
-//  var regex = /^\d*[^a-z]*/
+    var regex = /^\d*(\.|\/)?\d*$/gi;
+    //  var regex = /^\d*[^a-z]*/
     var resultNum = input.match(regex);
-  //  resultNum = resultNum[0];
-    console.log('result input[]', resultNum, 'end')
-    console.log(isNaN(resultNum))
-    
- //   if(isNaN(resultNum)){
- //     resultNum = false;
-  //  } else
+    //  resultNum = resultNum[0];
+     console.log('result input[]', resultNum, 'end')
+
     resultNum = eval(resultNum[0]);
-   
-      console.log('result inputfinal', resultNum, 'end')
+
+    //     console.log('result inputfinal', resultNum, 'end')
     return resultNum;
-   
-    
   };
 
   this.getUnit = function(input) {
@@ -31,9 +25,9 @@ function ConvertHandler() {
 
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
-     console.log("result inputUnit", resultUnit, "end");
- 
-      return resultUnit;
+    //    console.log("result inputUnit", resultUnit, "end");
+
+    return resultUnit;
   };
 
   this.getReturnUnit = function(initUnit) {
@@ -50,39 +44,34 @@ function ConvertHandler() {
       resultReturnUnit = "lbs";
     } else if (initUnit == "lbs") {
       resultReturnUnit = "kg";
-    } 
+    }
     return resultReturnUnit;
   };
 
   this.spellOutUnit = function(unit) {
     var resultSpellout;
-    if(unit == "kg"){
-      resultSpellout = "kilograms"
+    if (unit == "kg") {
+      resultSpellout = "kilograms";
+    } else if (unit == "km") {
+      resultSpellout = "kilometers";
+    } else if (unit == "L") {
+      resultSpellout = "Litters";
+    } else if (unit == "lbs") {
+      resultSpellout = "pounds";
+    } else if (unit == "mi") {
+      resultSpellout = "miles";
+    } else if (unit == "gal") {
+      resultSpellout = "gallons";
     }
-    else if(unit=="km") {
-      resultSpellout = "kilometers"
-    }
-    else if (unit == "L") {
-      resultSpellout = "Litters"
-    }
-    else if (unit == "lbs") {
-      resultSpellout = "pounds"
-    }
-    else if (unit == "mi") {
-      resultSpellout = "miles"
-    }
-    else if (unit == "gal") {
-      resultSpellout = "gallons"
-    }
-   // console.log("resultSpellout", resultSpellout,unit);
+    // console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
   };
 
   this.convert = function(initNum, initUnit) {
-    initNum = Number(initNum);  
- //console.log('initNum,', initNum,)
-    
+    initNum = Number(initNum);
+    //console.log('initNum,', initNum,)
+
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
@@ -101,31 +90,36 @@ function ConvertHandler() {
     } else if (initUnit == "lbs") {
       resultConvert = initNum * lbsToKg;
     }
-//    else 
-//      console.log("error")
-//    resultConvert = undefined;
+    //    else
+    //      console.log("error")
+    //    resultConvert = undefined;
 
-  //  console.log(
-  //    "initNum convert",
-   //   initNum,
-   //   "initUnit",
-   //   initUnit,
-   //   "converted",
-  //    resultConvert
-  //  );
-    resultConvert = resultConvert.toFixed(3)
-    console.log('resultConvert', resultConvert)
+    //  console.log(
+    //    "initNum convert",
+    //   initNum,
+    //   "initUnit",
+    //   initUnit,
+    //   "converted",
+    //    resultConvert
+    //  );
+    resultConvert = resultConvert.toFixed(3);
+    //   console.log('resultConvert', resultConvert)
     return resultConvert;
   };
 
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var resultString;
-resultString = initNum +" "+ this.spellOutUnit(initUnit) + " converts to "+ returnNum +" "+ 
-  this.spellOutUnit(returnUnit)
-    
+    resultString =
+      initNum +
+      " " +
+      this.spellOutUnit(initUnit) +
+      " converts to " +
+      returnNum +
+      " " +
+      this.spellOutUnit(returnUnit);
 
- //   console.log('resultString', resultString);
-    return resultString;;
+    //   console.log('resultString', resultString);
+    return resultString;
   };
 }
 

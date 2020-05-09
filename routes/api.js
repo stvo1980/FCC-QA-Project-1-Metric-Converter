@@ -23,8 +23,9 @@ module.exports = function (app) {
     .get(function (req, res){
       var input = req.query.input;
       var initNum = convertHandler.getNum(input);
+    console.log('initNum', initNum)
       var initUnit = convertHandler.getUnit(input);
-    console.log("igetUnit", convertHandler.getUnit(input)) 
+  //  console.log("igetUnit", convertHandler.getUnit(input)) 
 
     var regexFilter = /^(mi|gls|km|L|gal|kg)$/i
     var test = regexFilter.test(initUnit);
