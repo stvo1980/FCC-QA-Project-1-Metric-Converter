@@ -11,7 +11,8 @@ function ConvertHandler() {
    var resultNum;
     var regex = /^[0-9]*(.)*[^a-z]/i;
 var resultNum = input.match(regex);
-console.log("inputmatchnumber", resultNum[0]);
+    resultNum = resultNum[0];
+// console.log("inputmatchnumber", resultNum[0]);
    
     
     // var regex = /^\d*(\.|\/)?\d*/g;
@@ -75,8 +76,10 @@ console.log("inputmatchnumber", resultNum[0]);
   };
 
   this.convert = function(initNum, initUnit) {
-    initNum = Number(initNum);
-    //console.log('initNum,', initNum,)
+  //  initNum = Number(initNum);
+    var calc = eval(initNum)
+    console.log('initNum', initNum)
+    console.log('calc', calc)
 
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
@@ -84,17 +87,17 @@ console.log("inputmatchnumber", resultNum[0]);
     var resultConvert;
 
     if (initUnit == "mi") {
-      resultConvert = initNum * miToKm;
+      resultConvert = calc * miToKm;
     } else if (initUnit == "km") {
-      resultConvert = initNum / miToKm;
+      resultConvert = calc / miToKm;
     } else if (initUnit == "L") {
-      resultConvert = initNum / galToL;
+      resultConvert = calc / galToL;
     } else if (initUnit == "gal") {
-      resultConvert = initNum * galToL;
+      resultConvert = calc * galToL;
     } else if (initUnit == "kg") {
-      resultConvert = initNum * lbsToKg;
+      resultConvert = calc * lbsToKg;
     } else if (initUnit == "lbs") {
-      resultConvert = initNum * lbsToKg;
+      resultConvert = calc * lbsToKg;
     }
     //    else
     //      console.log("error")
