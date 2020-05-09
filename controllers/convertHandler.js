@@ -50,7 +50,17 @@ function ConvertHandler() {
     if(unit == "kg"){
       resultSpellout = "kilogram"
     }
-    console.log("resultSpellout", resultSpellout,unit);
+    else if(unit=="km") {
+      resultSpellout = "kilometers"
+    }
+    else if (unit == "L") {
+      resultSpellout = "litre"
+    }
+    else if (unit == "gls") {
+      resultSpellout = "kilometers"
+    }
+    e
+   // console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
   };
