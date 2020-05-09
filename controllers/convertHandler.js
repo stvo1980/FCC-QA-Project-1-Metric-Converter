@@ -109,6 +109,7 @@ function ConvertHandler() {
     }
     else 
       console.log("error")
+    resultConvert = undefined;
 
   //  console.log(
   //    "initNum convert",
@@ -119,6 +120,7 @@ function ConvertHandler() {
   //    resultConvert
   //  );
     resultConvert = resultConvert.toFixed(3)
+    console.log('resultConvert', resultConvert)
     return resultConvert;
   };
 
