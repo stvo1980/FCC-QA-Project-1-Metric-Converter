@@ -8,13 +8,19 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-    var regex = /^\d*(\.|\/)?\d*$/gi;
+   var resultNum;
+    var regex = /^[0-9]*(.)*[^a-z]/i;
+var resultNum = input.match(regex);
+console.log("inputmatchnumber", resultNum[0]);
+   
+    
+    // var regex = /^\d*(\.|\/)?\d*/g;
     //  var regex = /^\d*[^a-z]*/
-    var resultNum = input.match(regex);
+  //  var resultNum = input.match(regex);
     //  resultNum = resultNum[0];
-     console.log('result input[]', resultNum, 'end')
+ //    console.log('result input[]', input, 'end')
 
-    resultNum = eval(resultNum[0]);
+  //  resultNum = eval(resultNum[0]);
 
     //     console.log('result inputfinal', resultNum, 'end')
     return resultNum;
