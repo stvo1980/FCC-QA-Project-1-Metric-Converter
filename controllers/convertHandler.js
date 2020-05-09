@@ -8,10 +8,10 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-//    var regex = /^\d*(\.|\/)?\d*/gi;
-var regex = /^\d*[^a-z]*/
+    var regex = /^\d*(\.|\/)?\d*/gi;
+//  var regex = /^\d*[^a-z]*/
     var resultNum = input.match(regex);
-    resultNum = resultNum[0];
+  //  resultNum = resultNum[0];
     console.log('result input[]', resultNum, 'end')
     console.log(isNaN(resultNum))
     
@@ -19,7 +19,7 @@ var regex = /^\d*[^a-z]*/
  //     resultNum = false;
   //  } else
     resultNum = eval(resultNum[0]);
- //   resultNum = Number(resultNum).toFixed(3);
+   
       console.log('result inputfinal', resultNum, 'end')
     return resultNum;
    // var result;
