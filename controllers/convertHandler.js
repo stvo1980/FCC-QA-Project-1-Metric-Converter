@@ -107,6 +107,8 @@ function ConvertHandler() {
     } else if (initUnit == "lbs") {
       resultConvert = initNum * lbsToKg;
     }
+    else 
+      console.log("error")
 
   //  console.log(
   //    "initNum convert",
