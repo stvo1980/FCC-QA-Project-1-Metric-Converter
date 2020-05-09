@@ -12,7 +12,7 @@ function ConvertHandler() {
 
     var resultNum = input.match(regex);
     resultNum = eval(resultNum[0]);
-    
+ //   resultNum = Number(resultNum).toFixed(3);
       console.log('result input', resultNum, 'end')
     return resultNum;
    // var result;
@@ -103,6 +103,7 @@ function ConvertHandler() {
    //   "converted",
   //    resultConvert
   //  );
+    resultConvert = resultConvert.toFixed(3)
     return resultConvert;
   };
 
