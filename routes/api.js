@@ -24,12 +24,17 @@ module.exports = function (app) {
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
-      res.send({
+    if(initNum==undefined)
+      {res.json({error: "invalid number"})}
+    else if (initUnit == undefined) {
+      res.json({error: "invalid unit"})
+    } else if (initUnit == undefined && initNum)
+      res.json({
         initNum:initNum, 
         initUnit: initUnit,
         returnNum: returnNum,
         returnUnit: returnUnit,
-        string: string
+        string: toString
       })
     });
     
