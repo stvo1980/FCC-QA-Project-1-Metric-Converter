@@ -28,22 +28,22 @@ module.exports = function(app) {
     var initUnit = convertHandler.getUnit(input);
     //  console.log("igetUnit", convertHandler.getUnit(input))
 
-    var regexFilter = /^(mi|gls|km|L|gal|kg)$/i;
-    var test = regexFilter.test(initUnit);
+    var regexUnit = /^(mi|gls|km|L|gal|kg)$/i;
+    var testUnit = regexUnit.test(initUnit);
     //  console.log("test", test)
   
     ///
-    if(!testNum && !test) {
+    if(!testNum && !testUnit) {
       
-      res.json({ string: "Invalid number and unit"});
+      res.json({ error: "Invalid Number and Unit"});
     }
     
      else if (!testNum) {
-      res.json({ string:"Invalid number" });
+      res.json({ error:"Invalid Number" });
     }
     //
-   else if (!test) {
-      res.json({ error: "Invalid unit" });
+   else if (!testUnit) {
+      res.json({ error: "Invalid Unit" });
     }
     
     
