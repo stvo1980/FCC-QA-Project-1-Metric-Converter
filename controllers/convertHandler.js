@@ -11,9 +11,16 @@ function ConvertHandler() {
 //    var regex = /^\d*(\.|\/)?\d*/gi;
 var regex = /^\d*[^a-z]*/
     var resultNum = input.match(regex);
+    resultNum = resultNum[0];
+    console.log('result input[]', resultNum, 'end')
+    console.log(isNaN(resultNum))
+    
+ //   if(isNaN(resultNum)){
+ //     resultNum = false;
+  //  } else
     resultNum = eval(resultNum[0]);
  //   resultNum = Number(resultNum).toFixed(3);
-      console.log('result input', resultNum, 'end')
+      console.log('result inputfinal', resultNum, 'end')
     return resultNum;
    // var result;
   //  result - input;
@@ -119,7 +126,7 @@ resultString = initNum +" "+ this.spellOutUnit(initUnit) + " converts to "+ retu
   this.spellOutUnit(returnUnit)
     
 
-    console.log('resultString', resultString);
+ //   console.log('resultString', resultString);
     return resultString;;
   };
 }
