@@ -23,11 +23,11 @@ module.exports = function (app) {
       var returnNum = convertHandler.convert(initNum, initUnit);
       var returnUnit = convertHandler.getReturnUnit(initUnit);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
-  // console.log("initNum", initNum) 
-   if(initUnit='mi'){
-     res.json({error: "invalid unit"})
-   }
-     else
+   console.log("igetUnit", initUnit) 
+  // if(initUnit='mi'){
+ //    res.json({error: "invalid unit"})
+ //  }
+ //    else
    res.json({
         initNum:initNum, 
         initUnit: initUnit,

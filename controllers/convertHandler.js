@@ -34,11 +34,14 @@ function ConvertHandler() {
 
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
-    // console.log("result input", resultUnit, "end");
-    var regexFilter = /^(mi|gls|km|L|gal|kg)$/i
-    var test = regexFilter.test(resultUnit);
-    console.log("test", test)
-    return resultUnit;
+     console.log("result inputUnit", resultUnit, "end");
+ //   var regexFilter = /^(mi|gls|km|L|gal|kg)$/i
+//    var test = regexFilter.test(resultUnit);
+//    console.log("test", test)
+  //  if(test){
+  //  resultUnit;}
+ //   else {resultUnit=false}
+      return resultUnit;
   };
 
   this.getReturnUnit = function(initUnit) {
@@ -106,8 +109,8 @@ function ConvertHandler() {
     } else if (initUnit == "lbs") {
       resultConvert = initNum * lbsToKg;
     }
-    else 
-      console.log("error")
+//    else 
+//      console.log("error")
 //    resultConvert = undefined;
 
   //  console.log(
