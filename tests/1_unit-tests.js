@@ -24,7 +24,6 @@ suite("Unit Tests", function() {
       var input = "32.55L";
       assert.equal(convertHandler.getNum(input), 32.55);
       done();
-     
     });
 
     test("Fractional Input", function(done) {
@@ -85,38 +84,58 @@ suite("Unit Tests", function() {
         "LBS",
         "KG"
       ];
-      
-      input.forEach(function(ele,i) {
+
+      input.forEach(function(ele, i) {
         assert.include(
           convertHandler.getUnit(ele),
           expect[i],
           "For Each Valid Unit Inputs"
         );
-
-       
       });
       done();
     });
 
     test("Unknown Unit Input", function(done) {
-    var input = ["gal","l","mi","km", "lbs","kg","GAL","L","MI","KM","LBS","KG"];
-    var expect = ["gal","l","mi","km", "lbs","kg","GAL","L","MI","KM","LBS","KG"]; 
-      input.forEach(function(ele,i) {
-        assert.notInclude(
-          convertHandler.getUnit(ele),
-                "Unknown Unit Input"
-        );
+      var input = [
+        "gal",
+        "l",
+        "mi",
+        "km",
+        "lbs",
+        "kg",
+        "GAL",
+        "L",
+        "MI",
+        "KM",
+        "LBS",
+        "KG"
+      ];
+      var expect = [
+        "gal",
+        "l",
+        "mi",
+        "km",
+        "lbs",
+        "kg",
+        "GAL",
+        "L",
+        "MI",
+        "KM",
+        "LBS",
+        "KG"
+      ];
+      input.forEach(function(ele, i) {
+        assert.notInclude(convertHandler.getUnit(ele), "Unknown Unit Input");
+      });
 
-        });
-
-       done();
+      done();
     });
   });
 
   suite("Function convertHandler.getReturnUnit(initUnit)", function() {
     test("For Each Valid Unit Inputs", function(done) {
       var input = ["gal", "l", "mi", "km", "lbs", "kg"];
-  
+
       var expect = ["l", "gal", "km", "mi", "kg", "lbs"];
       input.forEach(function(ele, i) {
         assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
@@ -129,11 +148,18 @@ suite("Unit Tests", function() {
     test("For Each Valid Unit Inputs", function(done) {
       //see above example for hint
       var input = ["gal", "l", "mi", "km", "lbs", "kg"];
-      var expect = ["gallons", "litters","miles", "kilometers", "pounds", "kilograms"];
+      var expect = [
+        "gallons",
+        "litters",
+        "miles",
+        "kilometers",
+        "pounds",
+        "kilograms"
+      ];
       input.forEach(function(ele, i) {
         assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
       });
-      
+
       done();
     });
   });
@@ -151,15 +177,14 @@ suite("Unit Tests", function() {
     });
 
     test("L to Gal", function(done) {
-       var input = [5, "l"];
+      var input = [5, "l"];
       var expected = 1.32086;
       assert.approximately(
         convertHandler.convert(input[0], input[1]),
         expected,
         0.1
-      ); 
+      );
       done();
-     
     });
 
     test("Mi to Km", function(done) {
@@ -169,9 +194,8 @@ suite("Unit Tests", function() {
         convertHandler.convert(input[0], input[1]),
         expected,
         0.1
-      ); 
+      );
       done();
-     
     });
 
     test("Km to Mi", function(done) {
@@ -181,9 +205,8 @@ suite("Unit Tests", function() {
         convertHandler.convert(input[0], input[1]),
         expected,
         0.1
-      ); 
+      );
       done();
-     
     });
 
     test("Lbs to Kg", function(done) {
@@ -193,9 +216,8 @@ suite("Unit Tests", function() {
         convertHandler.convert(input[0], input[1]),
         expected,
         0.1
-      ); 
+      );
       done();
-     
     });
 
     test("Kg to Lbs", function(done) {
@@ -205,9 +227,8 @@ suite("Unit Tests", function() {
         convertHandler.convert(input[0], input[1]),
         expected,
         0.1
-      ); 
+      );
       done();
-     
     });
   });
 });

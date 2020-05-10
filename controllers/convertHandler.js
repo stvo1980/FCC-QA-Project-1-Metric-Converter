@@ -8,16 +8,15 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-   var resultNum=[];
+    var resultNum = [];
     var regex = /^[0-9]*(.)*[^a-z]/i;
- resultNum = input.match(regex);
-  //   console.log('result inputfinal', resultNum, 'end')
-   if(resultNum!=null) { 
-     resultNum = resultNum[0];
-  
-   }  else resultNum=1;
-   
-       //     console.log('result inputfinal', resultNum, 'end')
+    resultNum = input.match(regex);
+    //   console.log('result inputfinal', resultNum, 'end')
+    if (resultNum != null) {
+      resultNum = resultNum[0];
+    } else resultNum = 1;
+
+    //     console.log('result inputfinal', resultNum, 'end')
     return resultNum;
   };
 
@@ -26,7 +25,7 @@ function ConvertHandler() {
 
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
-//        console.log("result inputUnit", resultUnit, "end");
+    //        console.log("result inputUnit", resultUnit, "end");
 
     return resultUnit;
   };
@@ -39,20 +38,20 @@ function ConvertHandler() {
       resultReturnUnit = "mi";
     } else if (initUnit == "L" || initUnit == "l") {
       resultReturnUnit = "gal";
-    } else if (initUnit == "gal" ||initUnit == "GAL") {
+    } else if (initUnit == "gal" || initUnit == "GAL") {
       resultReturnUnit = "l";
-    } else if (initUnit == "kg" ||initUnit == "KG") {
+    } else if (initUnit == "kg" || initUnit == "KG") {
       resultReturnUnit = "lbs";
     } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultReturnUnit = "kg";
     }
-  //  console.log("resultReturnUnit", resultReturnUnit)
+    //  console.log("resultReturnUnit", resultReturnUnit)
     return resultReturnUnit;
   };
 
   this.spellOutUnit = function(unit) {
     var resultSpellout;
-    if (unit == "kg" ||unit == "KG") {
+    if (unit == "kg" || unit == "KG") {
       resultSpellout = "kilograms";
     } else if (unit == "km" || unit == "KM") {
       resultSpellout = "kilometers";
@@ -65,24 +64,24 @@ function ConvertHandler() {
     } else if (unit == "gal" || unit == "GAL") {
       resultSpellout = "gallons";
     }
-   //  console.log("resultSpellout", resultSpellout,unit);
+    //  console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
   };
 
   this.convert = function(initNum, initUnit) {
-  //  initNum = Number(initNum);
-    var calc = eval(initNum)
-    calc = Number(calc)
-//    console.log('initNum', initNum)
- //   console.log('calc', calc)
+    //  initNum = Number(initNum);
+    var calc = eval(initNum);
+    calc = Number(calc);
+    //    console.log('initNum', initNum)
+    //   console.log('calc', calc)
 
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var resultConvert;
 
-    if (initUnit == "mi" || initUnit == "MI" ) {
+    if (initUnit == "mi" || initUnit == "MI") {
       resultConvert = calc * miToKm;
     } else if (initUnit == "km" || initUnit == "KM") {
       resultConvert = calc / miToKm;
@@ -95,10 +94,10 @@ function ConvertHandler() {
     } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultConvert = calc * lbsToKg;
     }
-        
- //   resultConvert = parseInt(resultConvert)
-  //  resultConvert = resultConvert.toFixed(5);
-       console.log('resultConvert', resultConvert)
+
+    //   resultConvert = parseInt(resultConvert)
+    //  resultConvert = resultConvert.toFixed(5);
+    console.log("resultConvert", resultConvert);
     return resultConvert;
   };
 
