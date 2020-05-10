@@ -32,7 +32,7 @@ var resultNum = input.match(regex);
 
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
-    //    console.log("result inputUnit", resultUnit, "end");
+        console.log("result inputUnit", resultUnit, "end");
 
     return resultUnit;
   };
