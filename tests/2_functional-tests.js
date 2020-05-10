@@ -67,13 +67,14 @@ suite('Functional Tests', function() {
       });
       
       test('Convert kg (no number)', function(done) {
-    //    chai.request(server)
-   //     .get('/api/convert')
-   //     .query({input: 'kg'})
-   //     .end(function(err, res){
+        chai.request(server)
+        .get('/api/convert')
+        .query({input: 'kg'})
+        .end(function(err, res){
     //       assert.equal(res.body.error, 'Invalid Number');
-   //       done();
-    //    });
+        assert.equal(res.body.initNum, 1);
+          done();
+        });
        
       });
       
