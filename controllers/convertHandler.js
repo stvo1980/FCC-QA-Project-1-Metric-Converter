@@ -46,12 +46,13 @@ var resultNum = input.match(regex);
     } else if (initUnit == "L" || initUnit == "l") {
       resultReturnUnit = "gal";
     } else if (initUnit == "gal" ||initUnit == "GAL") {
-      resultReturnUnit = "L";
+      resultReturnUnit = "l";
     } else if (initUnit == "kg" ||initUnit == "KG") {
       resultReturnUnit = "lbs";
     } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultReturnUnit = "kg";
     }
+    console.log("resultReturnUnit", resultReturnUnit)
     return resultReturnUnit;
   };
 
@@ -62,7 +63,7 @@ var resultNum = input.match(regex);
     } else if (unit == "km" || unit == "KM") {
       resultSpellout = "kilometers";
     } else if (unit == "L" || unit == "l") {
-      resultSpellout = "Litters";
+      resultSpellout = "litters";
     } else if (unit == "lbs" || unit == "LBS") {
       resultSpellout = "pounds";
     } else if (unit == "mi" || unit == "MI") {
@@ -111,7 +112,7 @@ var resultNum = input.match(regex);
     //   "converted",
     //    resultConvert
     //  );
-    resultConvert = resultConvert.toFixed(3);
+    resultConvert = resultConvert.toFixed(5);
     //   console.log('resultConvert', resultConvert)
     return resultConvert;
   };
