@@ -32,7 +32,7 @@ var resultNum = input.match(regex);
 
     var resultUnit = input.match(regex);
     resultUnit = resultUnit.join("");
-        console.log("result inputUnit", resultUnit, "end");
+//        console.log("result inputUnit", resultUnit, "end");
 
     return resultUnit;
   };
@@ -71,7 +71,7 @@ var resultNum = input.match(regex);
     } else if (unit == "gal" || unit == "GAL") {
       resultSpellout = "gallons";
     }
-     console.log("resultSpellout", resultSpellout,unit);
+   //  console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
   };
@@ -79,6 +79,7 @@ var resultNum = input.match(regex);
   this.convert = function(initNum, initUnit) {
   //  initNum = Number(initNum);
     var calc = eval(initNum)
+    calc = Number(calc)
 //    console.log('initNum', initNum)
  //   console.log('calc', calc)
 
@@ -100,20 +101,10 @@ var resultNum = input.match(regex);
     } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultConvert = calc * lbsToKg;
     }
-    //    else
-    //      console.log("error")
-    //    resultConvert = undefined;
-
-    //  console.log(
-    //    "initNum convert",
-    //   initNum,
-    //   "initUnit",
-    //   initUnit,
-    //   "converted",
-    //    resultConvert
-    //  );
-    resultConvert = resultConvert.toFixed(5);
-    //   console.log('resultConvert', resultConvert)
+        
+ //   resultConvert = parseInt(resultConvert)
+  //  resultConvert = resultConvert.toFixed(5);
+       console.log('resultConvert', resultConvert)
     return resultConvert;
   };
 
