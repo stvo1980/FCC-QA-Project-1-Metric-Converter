@@ -71,20 +71,7 @@ suite("Unit Tests", function() {
         "LBS",
         "KG"
       ];
-      input.forEach(function(ele) {
-        assert.include(
-          convertHandler.getUnit(input),
-          input,
-          "For Each Valid Unit Inputs"
-        );
-
-        //assert
-      });
-      done();
-    });
-
-    test("Unknown Unit Input", function(done) {
-      var input = [
+      var expect = [
         "gal",
         "l",
         "mi",
@@ -98,10 +85,26 @@ suite("Unit Tests", function() {
         "LBS",
         "KG"
       ];
-      assert.include(
-          convertHandler.getUnit(input),
-          input,
+      
+      input.forEach(function(ele,i) {
+        assert.include(
+          convertHandler.getUnit(ele),
+          expect[i],
           "For Each Valid Unit Inputs"
+        );
+
+        //assert
+      });
+      done();
+    });
+
+    test("Unknown Unit Input", function(done) {
+    var input = ["gal","l","mi","km", "lbs","kg","GAL","L","MI","KM","LBS","KG"];
+    var expect = ["gal","l","mi","km", "lbs","kg","GAL","L","MI","KM","LBS","KG"]; 
+      assert.notInclude(
+          convertHandler.getUnit(ele),
+          input,
+          "Unknown Unit Input"
         );
 
       
