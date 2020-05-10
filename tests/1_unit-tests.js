@@ -101,21 +101,25 @@ suite("Unit Tests", function() {
     test("Unknown Unit Input", function(done) {
     var input = ["gal","l","mi","km", "lbs","kg","GAL","L","MI","KM","LBS","KG"];
     var expect = ["gal","l","mi","km", "lbs","kg","GAL","L","MI","KM","LBS","KG"]; 
-      assert.notInclude(
+      input.forEach(function(ele,i) {
+        assert.notInclude(
           convertHandler.getUnit(ele),
-          input,
-          "Unknown Unit Input"
+                "Unknown Unit Input"
         );
 
+        //assert
+      });
+
       
-      //done();
+      done();
     });
   });
 
   suite("Function convertHandler.getReturnUnit(initUnit)", function() {
     test("For Each Valid Unit Inputs", function(done) {
       var input = ["gal", "l", "mi", "km", "lbs", "kg"];
-      var expect = ["l", "gal", "km", "mi", "kg", "lbs"];
+      var expect = ["gal", "l", "mi", "km", "lbs", "kg"];
+  //    var expect = ["l", "gal", "km", "mi", "kg", "lbs"];
       input.forEach(function(ele, i) {
         assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
       });
