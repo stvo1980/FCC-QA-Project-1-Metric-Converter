@@ -38,11 +38,12 @@ suite('Functional Tests', function() {
         .get('/api/convert')
         .query({input: '32g'})
         .end(function(err, res){
-          assert.equal(res.status, 200);
-          assert.equal(res.body.initNum, 32);
-          assert.equal(res.body.initUnit, 'L');
-          assert.approximately(res.body.returnNum, 2.64172, 0.1);
-          assert.equal(res.body.returnUnit, 'gal');
+       //   assert.equal(res.status, 200);
+         // assert.equal(res.body.initNum, 32);
+       //   assert.equal(res.body.initUnit, 'g');
+    //      assert.approximately(res.body.returnNum, 2.64172, 0.1);
+     //     assert.equal(res.body.returnUnit, 'gal');
+          assert.equal(res.string, 'Invalid Unit');
           done();
         });
         
