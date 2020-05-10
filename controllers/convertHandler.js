@@ -8,7 +8,7 @@
 
 function ConvertHandler() {
   this.getNum = function(input) {
-   var resultNum;
+   var resultNum=0;
     var regex = /^[0-9]*(.)*[^a-z]/i;
 var resultNum = input.match(regex);
     resultNum = resultNum[0];
@@ -23,7 +23,7 @@ var resultNum = input.match(regex);
 
   //  resultNum = eval(resultNum[0]);
 
-    //     console.log('result inputfinal', resultNum, 'end')
+         console.log('result inputfinal', resultNum, 'end')
     return resultNum;
   };
 

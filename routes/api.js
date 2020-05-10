@@ -19,7 +19,7 @@ module.exports = function(app) {
     
     var input = req.query.input;
     var initNum = convertHandler.getNum(input);
-  //  console.log("initNum", initNum);
+    console.log("initNum", initNum);
     var regexNum = /^\d*(\.)?\d*(\/|\.)?\d*(\.)?\d*$/;
     var testNum = regexNum.test(initNum);
     //console.log("testNum", testNum)
@@ -45,10 +45,10 @@ module.exports = function(app) {
    else if (!testUnit) {
       res.json({ error: "Invalid Input Unit" });
     }
-   // else if (!testUnit) {
-  //    res.json({ error: "Invalid Input Unit" });
-  //  }
-    console.log("testNum", testNum)
+    else if (!initNum) {
+      res.json({ error: "No number" });
+    }
+  //  console.log("testNum", testNum)
     
 
     var returnNum = convertHandler.convert(initNum, initUnit);
