@@ -43,9 +43,12 @@ module.exports = function(app) {
     }
     //
    else if (!testUnit) {
-      res.json({ error: "Invalid Unit" });
+      res.json({ error: "Invalid Input Unit" });
     }
-    
+   // else if (!testUnit) {
+  //    res.json({ error: "Invalid Input Unit" });
+  //  }
+    console.log("testNum", testNum)
     
 
     var returnNum = convertHandler.convert(initNum, initUnit);
