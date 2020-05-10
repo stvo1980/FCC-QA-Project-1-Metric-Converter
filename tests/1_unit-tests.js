@@ -131,10 +131,10 @@ suite("Unit Tests", function() {
     test("For Each Valid Unit Inputs", function(done) {
       //see above example for hint
       var input = ["gal", "l", "mi", "km", "lbs", "kg"];
-  //    var expect = ["gal", "l", "mi", "km", "lbs", "kg"];
+  
       var expect = ["gallons", "litters","miles", "kilometers", "pounds", "kilograms"];
       input.forEach(function(ele, i) {
-        assert.equal(convertHandler.getReturnUnit(ele), expect[i]);
+        assert.equal(convertHandler.spellOutUnit(ele), expect[i]);
       });
       
       done();

@@ -52,7 +52,7 @@ var resultNum = input.match(regex);
     } else if (initUnit == "lbs" || initUnit == "LBS") {
       resultReturnUnit = "kg";
     }
-    console.log("resultReturnUnit", resultReturnUnit)
+  //  console.log("resultReturnUnit", resultReturnUnit)
     return resultReturnUnit;
   };
 
@@ -71,7 +71,7 @@ var resultNum = input.match(regex);
     } else if (unit == "gal" || unit == "GAL") {
       resultSpellout = "gallons";
     }
-    // console.log("resultSpellout", resultSpellout,unit);
+     console.log("resultSpellout", resultSpellout,unit);
 
     return resultSpellout;
   };
